@@ -4,10 +4,12 @@ import UserProvider from './components/UserProvider';
 
 function App() {
   return (
-    <UserProvider>
-      <SearchBar />
-      <UserList />
-    </UserProvider>
+    <div className='mx-auto max-w-6xl my-9'>
+      <UserProvider>
+        <SearchBar />
+        <UserList />
+      </UserProvider>
+    </div>
   )
 }
 
