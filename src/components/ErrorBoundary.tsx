@@ -1,12 +1,17 @@
 import React from "react";
 
+type Props = {
+  fallBack: string;
+  children: React.ReactNode
+}
+
 export class ErrorBoundary extends React.Component<{ fallBack: string, children: React.ReactNode }, { hasError: boolean }> {
-  constructor(props) {
+  constructor(props:Props) {
     super(props)
     this.state = { hasError: false }
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError() {
     return { hasError: true }
   }
 
@@ -18,8 +23,6 @@ export class ErrorBoundary extends React.Component<{ fallBack: string, children:
     if (this.state.hasError) {
       return this.props.fallBack;
     }
-
     return this.props.children;
   }
-
 }
