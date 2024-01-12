@@ -1,4 +1,4 @@
-import { User } from "../model/user";
+import type { User } from "../model/user";
 
 function User({ user }: { user: User }) {
   return (
